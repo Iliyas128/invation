@@ -162,13 +162,12 @@
   <script>
     // Google Forms обработчик
     document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
       const formData = new FormData(this);
       const name = formData.get('entry.2005620554');
       const attendance = formData.get('entry.1045781291');
       
       if (!name || !attendance) {
+        e.preventDefault();
         document.querySelector('.form-error').style.display = 'block';
         document.querySelector('.form-success').style.display = 'none';
         return;
@@ -179,23 +178,20 @@
       const originalText = submitButton.textContent;
       submitButton.textContent = 'Жіберілуде...';
       submitButton.disabled = true;
-
-      // Отправляем форму в Google Forms
-      this.submit();
       
-      // Показываем успех через небольшую задержку
+      // Форма отправится естественным образом в iframe
+      // Показываем успех через задержку
       setTimeout(() => {
         document.querySelector('.rsvp-form').style.display = 'none';
         document.querySelector('.form-success').style.display = 'block';
         document.querySelector('.form-error').style.display = 'none';
-        
-        // Сбрасываем форму
-        this.reset();
-        
-        // Восстанавливаем кнопку
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1000);
+      }, 2000);
+    });
+    
+    // Обработчик для скрытого iframe (когда форма успешно отправлена)
+    document.querySelector('iframe[name="hidden-iframe"]').addEventListener('load', function() {
+      // Этот код выполнится после успешной отправки в Google Forms
+      console.log('Форма успешно отправлена в Google Forms');
     });
 
     // Автовоспроизведение музыки (размьютить при взаимодействии)
