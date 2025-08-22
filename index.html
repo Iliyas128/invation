@@ -121,59 +121,32 @@
     </section>
     <section class="rsvp-section">
       <h2>Қатысуыңызды растаңыз</h2>
-      <form class="rsvp-form" id="rsvp-form" autocomplete="off">
+      <form class="rsvp-form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/formResponse" method="POST" target="hidden-iframe">
         <label for="name">Аты-жөніңіз:</label>
         <input type="text" id="name" name="entry.1375979990" placeholder="Аты-жөніңізді жазыңыз" required>
         
         <label>Қатысуыңыз:</label>
         <div class="radio-group">
-          <label><input type="radio" name="entry.322300188" value="Иә, барамын" required> Иә, барамын</label>
-          <label><input type="radio" name="entry.322300188" value="Жұбайыммен бірге барамын"> Жұбайыммен бірге барамын</label>
-          <label><input type="radio" name="entry.322300188" value="Өкінішке орай, бара алмаймын"> Өкінішке орай, бара алмаймын</label>
+          <label><input type="radio" name="entry.1045781291" value="Ия озым барамын" required> Иә, барамын</label>
+          <label><input type="radio" name="entry.1045781291" value="Жұбайыммен бірге барамын"> Жұбайыммен бірге барамын</label>
+          <label><input type="radio" name="entry.1045781291" value="Өкінішке орай бара алмайм"> Өкінішке орай, бара алмаймын</label>
         </div>
         
         <button type="submit" id="submit-btn">Жіберу</button>
       </form>
       
-      <div class="form-success" style="display:none;color:green;margin-top:10px;">Рақмет! Жауабыңыз қабылданды.</div>
-      <div class="form-error" style="display:none;color:red;margin-top:10px;">Қате орын алды. Қайталап көріңіз.</div>
-    </section>
-    
-    <script>
-    document.getElementById('rsvp-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
+      <!-- Скрытый iframe для отправки формы -->
+      <iframe name="hidden-iframe" style="display:none;"></iframe>
       
-      const btn = document.getElementById('submit-btn');
-      const successDiv = document.querySelector('.form-success');
-      const errorDiv = document.querySelector('.form-error');
-    
-      btn.disabled = true;
-      btn.textContent = "Жіберілуде...";
-    
-      const formData = new FormData(this);
-      const url = "https://docs.google.com/forms/d/e/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/formResponse";
-    
-      try {
-        await fetch(url, {
-          method: "POST",
-          body: formData,
-          mode: "no-cors"
-        });
-        
-        successDiv.style.display = "block";
-        errorDiv.style.display = "none";
-        this.reset();
-      } catch (err) {
-        successDiv.style.display = "none";
-        errorDiv.style.display = "block";
-      }
-    
-      btn.disabled = false;
-      btn.textContent = "Жіберу";
-    });
-    </script>
-    
-    
+      <div class="form-success" style="display:none;">Рақмет! Жауабыңыз қабылданды.</div>
+      <div class="form-error" style="display:none;">Қате орын алды. Қайталап көріңіз.</div>
+      
+      <!-- Инструкция для вас -->
+      <div class="admin-info" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem; color: #6c757d;">
+        <strong>📊 Админ-панель:</strong> 
+        <a href="https://docs.google.com/spreadsheets/d/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/edit#gid=0" target="_blank" style="color: #007bff;">Google Sheets-те жауаптарды көріңіз</a>
+      </div>
+    </section>
     <footer>
       <p>Құрметпен, Гани & Роза Садвакасовтар</p>
     </footer>
@@ -187,42 +160,39 @@
     <img src="https://optim.tildacdn.pro/tild3231-3464-4634-a262-386630366135/-/cover/564x352/center/center/-/format/webp/_2_1.png.webp" alt="Декор" />
   </div>
   <script>
-    // Google Forms обработчик
-    document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+    // Функция валидации и отправки формы
+    function validateAndSubmit(form) {
+      const name = form.querySelector('input[name="entry.2005620554"]').value.trim();
+      const attendanceRadio = form.querySelector('input[name="entry.1045781291"]:checked');
       
-      const formData = new FormData(this);
-      const name = formData.get('entry.2005620554');
-      const attendance = formData.get('entry.1045781291');
-      
-      if (!name || !attendance) {
+      // Проверяем заполненность полей
+      if (!name || !attendanceRadio) {
         document.querySelector('.form-error').style.display = 'block';
         document.querySelector('.form-success').style.display = 'none';
-        return;
+        return false; // Предотвращаем отправку
       }
-
-      // Показываем загрузку
-      const submitButton = this.querySelector('button[type="submit"]');
+      
+      // Скрываем ошибки
+      document.querySelector('.form-error').style.display = 'none';
+      
+      // Показываем состояние загрузки
+      const submitButton = form.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
       submitButton.textContent = 'Жіберілуде...';
       submitButton.disabled = true;
-
-      // Отправляем форму в Google Forms
-      this.submit();
       
       // Показываем успех через небольшую задержку
       setTimeout(() => {
-        document.querySelector('.rsvp-form').style.display = 'none';
+        form.style.display = 'none';
         document.querySelector('.form-success').style.display = 'block';
-        document.querySelector('.form-error').style.display = 'none';
-        
-        // Сбрасываем форму
-        this.reset();
-        
-        // Восстанавливаем кнопку
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      }, 1000);
+      }, 1500);
+      
+      return true; // Разрешаем отправку
+    }
+    
+    // Обработчик для скрытого iframe (когда форма успешно отправлена)
+    document.querySelector('iframe[name="hidden-iframe"]').addEventListener('load', function() {
+      console.log('Форма успешно отправлена в Google Forms');
     });
 
     // Автовоспроизведение музыки (размьютить при взаимодействии)
