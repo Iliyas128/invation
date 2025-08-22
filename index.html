@@ -120,28 +120,29 @@
       </div>
     </section>
     <section class="rsvp-section">
-      <h2>Қатысуыңызды растаңыз</h2>
-      <form class="rsvp-form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/formResponse" method="POST" target="hidden-iframe">
-        <label for="name">Аты-жөніңіз:</label>
-        <input type="text" id="name" name="entry.1375979990" placeholder="Аты-жөніңізді жазыңыз" required>
-        
-        <label>Қатысуыңыз:</label>
-        <div class="radio-group">
-          <label><input type="radio" name="entry.1045781291" value="Ия озым барамын" required> Иә, барамын</label>
-          <label><input type="radio" name="entry.1045781291" value="Жұбайыммен бірге барамын"> Жұбайыммен бірге барамын</label>
-          <label><input type="radio" name="entry.1045781291" value="Өкінішке орай бара алмайм"> Өкінішке орай, бара алмаймын</label>
-        </div>
-        
-        <button type="submit" id="submit-btn">Жіберу</button>
-      </form>
-      
-      <!-- Скрытый iframe для отправки формы -->
-      <iframe name="hidden-iframe" style="display:none;"></iframe>
-      
-      <div class="form-success" style="display:none;">Рақмет! Жауабыңыз қабылданды.</div>
-      <div class="form-error" style="display:none;">Қате орын алды. Қайталап көріңіз.</div>
-      
-    </section>
+  <h2>Қатысуыңызды растаңыз</h2>
+  
+  <form class="rsvp-form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/formResponse" method="POST" target="hidden-iframe">
+    
+    <label for="name">Аты-жөніңіз:</label>
+    <input type="text" id="name" name="entry.1375979990" placeholder="Аты-жөніңізді жазыңыз" required>
+    
+    <label>Қатысуыңыз:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="entry.322300188" value="Иә, барамын" required> Иә, барамын</label>
+      <label><input type="radio" name="entry.322300188" value="Жұбайыммен бірге барамын"> Жұбайыммен бірге барамын</label>
+      <label><input type="radio" name="entry.322300188" value="Өкінішке орай, бара алмаймын"> Өкінішке орай, бара алмаймын</label>
+    </div>
+    
+    <button type="submit">Жіберу</button>
+  </form>
+  
+  <!-- Скрытый iframe -->
+  <iframe name="hidden-iframe" style="display:none;"></iframe>
+  
+  <div class="form-success" style="display:none;">Рақмет! Жауабыңыз қабылданды.</div>
+  <div class="form-error" style="display:none;">Қате орын алды. Қайталап көріңіз.</div>
+</section>
     <footer>
       <p>Құрметпен, Гани & Роза Садвакасовтар</p>
     </footer>
@@ -155,6 +156,48 @@
     <img src="https://optim.tildacdn.pro/tild3231-3464-4634-a262-386630366135/-/cover/564x352/center/center/-/format/webp/_2_1.png.webp" alt="Декор" />
   </div>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('.rsvp-form');
+  const successMsg = document.querySelector('.form-success');
+  const errorMsg = document.querySelector('.form-error');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nameInput = form.querySelector('input[name="entry.1375979990"]'); // имя
+    const name = nameInput.value.trim();
+    const radios = form.querySelectorAll('input[name="entry.322300188"]'); // радиокнопки
+
+    if (!name) {
+      alert('Өтінемін, атыңызды енгізіңіз!');
+      nameInput.focus();
+      return;
+    }
+
+    let selected = false;
+    radios.forEach(radio => {
+      if (radio.checked) selected = true;
+    });
+
+    if (!selected) {
+      alert('Өтінемін, қатысуыңызды таңдаңыз!');
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    }).then(() => {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    }).catch(() => {
+      errorMsg.style.display = 'block';
+    });
+  });
+});
     // Функция валидации и отправки формы
     function validateAndSubmit(form) {
       const name = form.querySelector('input[name="entry.2005620554"]').value.trim();
