@@ -1,10 +1,15 @@
+/* Импорт красивых шрифтов с поддержкой казахского языка */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-family: 'Lora', 'Times New Roman', serif;
   background: #f7f3ef;
   min-height: 100vh;
   position: relative;
+  font-weight: 400;
+  line-height: 1.6;
 }
 .background {
   position: fixed;
@@ -37,15 +42,48 @@ header {
   box-shadow: 0 2px 12px rgba(224,185,115,0.15);
 }
 h1 {
-  font-size: 4rem;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2.8rem;
   color: #a67c52;
   margin: 0 0 8px 0;
-  font-family: 'Georgia', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(166,124,82,0.1);
+  letter-spacing: 0.02em;
+}
+
+/* Специальный стиль для главного заголовка */
+header h1:first-of-type {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #8b6f47;
+  margin-bottom: 20px;
+}
+
+/* Стиль для второго заголовка */
+header h1:last-of-type {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #a67c52;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 .invite-text {
-  font-size: 1.1rem;
+  font-family: 'Crimson Text', 'Times New Roman', serif;
+  font-size: 1.15rem;
   color: #4d3a1c;
   margin-bottom: 0;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.invite-text b {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
+  font-weight: 700;
+  color: #8b6f47;
 }
 .event-details, .rsvp-section {
   background: transparent;
@@ -55,8 +93,13 @@ h1 {
   margin: 18px 0 18px 0;
 }
 .event-details h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #a67c52;
   margin-top: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .event-details ul {
   list-style: none;
@@ -64,17 +107,26 @@ h1 {
   margin: 0 0 8px 0;
 }
 .event-details li {
-  font-size: 1rem;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 1.05rem;
   color: #4d3a1c;
   margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.event-details li b {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
+  font-weight: 700;
+  color: #8b6f47;
 }
 .map-link a {
+  font-family: 'Lora', 'Times New Roman', serif;
   color: #fff;
   background: #a67c52;
   padding: 7px 18px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: background 0.2s;
 }
 .map-link a:hover {
@@ -85,8 +137,11 @@ h1 {
   margin: 18px 0 18px 0;
 }
 .music-section h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #a67c52;
   margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 audio {
   width: 100%;
@@ -96,8 +151,13 @@ audio {
   margin-bottom: 8px;
 }
 .rsvp-section h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #a67c52;
   margin-top: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 25px;
 }
 .rsvp-form {
   display: flex;
@@ -106,81 +166,101 @@ audio {
   gap: 10px;
 }
 .rsvp-form label {
+  font-family: 'Lora', 'Times New Roman', serif;
   text-align: left;
   color: #4d3a1c;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 .rsvp-form input[type="text"] {
+  font-family: 'Lora', 'Times New Roman', serif;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #e0b973;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 .radio-group {
+  font-family: 'Lora', 'Times New Roman', serif;
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin-bottom: 8px;
   text-align: left;
+  font-size: 1.05rem;
 }
 .rsvp-form button {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
   background: #a67c52;
   color: #fff;
   border: none;
   border-radius: 6px;
   padding: 10px 0;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.15rem;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s;
+  letter-spacing: 0.02em;
 }
 .rsvp-form button:hover {
   background: #e0b973;
   color: #4d3a1c;
 }
 .form-success {
+  font-family: 'Lora', 'Times New Roman', serif;
   color: #388e3c;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-top: 10px;
-  font-weight: bold;
+  font-weight: 600;
+  text-align: center;
 }
 footer {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
   margin-top: 18px;
   color: #a67c52;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
 }
 .countdown-section {
   margin: 18px 0 18px 0;
 }
 .countdown-section h2 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #a67c52;
   margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
 }
 .countdown-timer {
-  font-size: 1.25rem;
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
+  font-size: 1.3rem;
   color: #4d3a1c;
-  font-weight: bold;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 8px;
 }
 .countdown-timer span {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   font-size: 1.5em;
   color: #a67c52;
   min-width: 32px;
   display: inline-block;
   text-align: center;
+  font-weight: 700;
 }
 .music-toggle {
+  font-family: 'Lora', 'Times New Roman', serif;
   margin-top: 10px;
   background: #e0b973;
   color: #4d3a1c;
   border: none;
   border-radius: 8px;
   padding: 8px 18px;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.15rem;
+  font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -200,25 +280,28 @@ footer {
   justify-content: center;
   gap: 16px;
   margin: 18px 0 18px 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 700;
 }
 .date-month, .date-year {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   color: #a67c52;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .date-day {
-  font-size: 3.2rem;
+  font-size: 3.8rem;
   color: #e0b973;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   min-width: 60px;
   text-align: center;
+  text-shadow: 0 2px 4px rgba(224,185,115,0.2);
 }
 .date-divider {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: #bca47a;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 4px;
 }
 .music-toggle-circle {
@@ -268,26 +351,32 @@ footer {
   position: relative;
 }
 .event-label {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
   color: #a67c52;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 2px;
   text-align: center;
+  letter-spacing: 0.02em;
 }
 .event-value {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #e0b973;
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 14px;
   text-align: center;
+  letter-spacing: 0.01em;
 }
 .event-address .event-value {
-  font-size: 1.1rem;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 1.15rem;
   color: #a67c52;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 18px;
 }
 .hall-photo-placeholder {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
   width: 100%;
   max-width: 340px;
   aspect-ratio: 16/9;
@@ -298,18 +387,19 @@ footer {
   align-items: center;
   justify-content: center;
   color: #bca47a;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-style: italic;
   box-shadow: 0 2px 12px rgba(224,185,115,0.10);
 }
 .event-map-btn {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
   display: block;
   width: 100%;
   max-width: 340px;
   background: linear-gradient(180deg, #e0b973 0%, #a67c52 100%);
   color: #fff;
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-align: center;
   border: none;
   border-radius: 16px;
@@ -318,6 +408,7 @@ footer {
   text-decoration: none;
   box-shadow: 0 2px 12px rgba(166,124,82,0.10);
   transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.02em;
 }
 .event-map-btn:hover {
   background: linear-gradient(180deg, #a67c52 0%, #e0b973 100%);
@@ -394,10 +485,12 @@ footer {
   text-align: center;
 }
 .countdown-title {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   color: #a67c52;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 18px;
+  letter-spacing: 0.02em;
 }
 .countdown-timer-floral {
   display: flex;
@@ -412,16 +505,20 @@ footer {
   min-width: 60px;
 }
 .countdown-number span {
-  font-size: 3.2rem;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 3.4rem;
   color: #e0b973;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.1;
+  text-shadow: 0 1px 3px rgba(224,185,115,0.15);
 }
 .countdown-label {
-  font-size: 1.1rem;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 1.05rem;
   color: #a67c52;
   margin-top: 4px;
   letter-spacing: 0.04em;
+  font-weight: 500;
 }
 .countdown-flower-top {
   position: absolute;
@@ -493,10 +590,10 @@ footer {
   overflow: visible;
 }
 .arc-text {
-  font-size:1.1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
   fill: #7fc7a3;
-  font-family: Georgia, serif;
-  font-weight: bold;
+  font-weight: 600;
   font-style: italic;
   letter-spacing: 0.03em;
 }
@@ -505,18 +602,18 @@ footer {
   animation: rotateOnPath 2.2s ease-out forwards;
 }
 .calendar-title-svg text {
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.1rem;
   fill: #7fc7a3;
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
 }
 .calendar-title-inside {
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2.1rem;
   color: #7fc7a3;
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 18px;
   line-height: 1.1;
@@ -524,44 +621,48 @@ footer {
   white-space: pre-line;
 }
 .calendar-table {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
   width: 100%;
   max-width: 320px;
   margin: 25px auto 0 auto;
   border-collapse: separate;
   border-spacing: 0 6px;
-  font-family: 'Georgia', serif;
   font-size: 1.05rem;
   color: #a67c52;
   background: transparent;
+  font-weight: 500;
 }
 .calendar-table th {
   color: #e0b973;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
   padding-bottom: 4px;
 }
 .calendar-table td {
+  font-family: 'Libre Baskerville', 'Times New Roman', serif;
   text-align: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
   font-size: 1.1rem;
   color: #a67c52;
-  font-weight: 500;
+  font-weight: 600;
   background: none;
   position: relative;
 }
 .calendar-day-highlight {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   display: inline-block;
   background: #e0b973;
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 50%;
   width: 36px;
   height: 36px;
   line-height: 36px;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   box-shadow: 0 2px 8px rgba(224,185,115,0.10);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 .calendar-doves {
   position: absolute;
@@ -574,12 +675,12 @@ footer {
   z-index: 3;
 }
 .calendar-heart {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
   display: inline-block;
   background: linear-gradient(180deg, #e0b973 0%, #a67c52 100%);
   color: #fff;
-  font-family: 'Georgia', serif;
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 50% 50% 60% 60%/60% 60% 100% 100%;
   width: 48px;
   height: 44px;
@@ -654,6 +755,12 @@ footer {
   h1 {
     font-size: 2.3rem;
   }
+  header h1:first-of-type {
+    font-size: 1.8rem;
+  }
+  header h1:last-of-type {
+    font-size: 2.1rem;
+  }
   .event-details, .rsvp-section {
     padding: 8px 2vw;
   }
@@ -673,11 +780,11 @@ footer {
     gap: 7px;
   }
   .date-day {
-    font-size: 3.1rem;
+    font-size: 3.4rem;
     min-width: 36px;
   }
   .date-month, .date-year {
-    font-size: 3rem;
+    font-size: 1.9rem;
   }
   .date-divider {
     font-size: 2.2rem;
@@ -718,7 +825,7 @@ footer {
     min-width: 36px;
   }
   .countdown-number span {
-    font-size: 2.1rem;
+    font-size: 2.3rem;
   }
   .countdown-label {
     font-size: 0.95rem;
