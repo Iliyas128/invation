@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Құдалыққа шақыру</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="footer-flowers scroll-animate">
+    <img src="https://optim.tildacdn.pro/tild3231-3464-4634-a262-386630366135/-/cover/564x352/center/center/-/format/webp/_2_1.png.webp" alt="Декор" />
+  </div>
+  <div class="background"></div>
+  <div class="container">
+    <header>
+      <h1>Құрметті қонақтар!</h1>
+      <img src="shared/photos/Kudalyk.jpg" alt="Құдалық" class="main-photo">
+      <h1>Сіздерді құдалық тойға шақырамыз!</h1>
+      <div class="date-block">
+        <span class="date-month">Қазан</span>
+        <span class="date-divider">|</span>
+        <span class="date-day">6</span>
+        <span class="date-divider">|</span>
+        <span class="date-year">2025</span>
+      </div>
+      <button id="music-toggle" class="music-toggle-circle" aria-label="Музыканы тоқтату">
+        <span id="music-icon-svg">
+          <svg id="icon-play" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="28" fill="url(#gold-gradient)"/>
+            <defs>
+              <linearGradient id="gold-gradient" x1="0" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#e0b973"/>
+                <stop offset="1" stop-color="#a67c52"/>
+              </linearGradient>
+            </defs>
+            <polygon points="22,16 22,40 40,28" fill="white"/>
+          </svg>
+        </span>
+      </button>
+      <audio id="main-audio" src="shared/music/videoplayback.m4a" type="audio/mp4" autoplay muted playsinline loop></audio>
+      <p class="invite-text">
+        Сіз(дер)ді қызымыз <b>Меруерттің</b> құдалық тойына арналған ақ дастарханымыздың құрметті қонағы болуға шақырамыз!<br>
+        <b>Той иелері:</b> Гани & Роза Садвакасовтар
+      </p>
+    </header>
+    <section class="event-info-block">
+      <div class="event-info-inner">
+        <div class="event-time">
+          <div class="event-label">Басталу уақыты:</div>
+          <div class="event-value">06.10.2025 / сағат 18:00</div>
+        </div>
+        <div class="event-address">
+          <div class="event-label">Мекен-жайы:</div>
+          <div class="event-value">Толе би 82 көшесі<br>Тараз қ.</div>
+        </div>
+        <div class="hall-photo-placeholder">
+          <img src="shared/photos/grandRoyale.jpg" alt="Зал фото" style="width: 371px; height: 240px; object-fit: cover; border-radius: 18px;">
+        </div>
+        <a class="event-map-btn" href="https://2gis.kz/almaty/search/Гранд%20Рояль%20Толе%20би%2082" target="_blank">Картадан қарау</a>
+      </div>
+    </section>
+    <section class="event-details">
+      <h2>Мереке мәліметтері</h2>
+      <ul>
+        <li><b>Күні:</b> 6 қазан 2025</li>
+        <li><b>Уақыты:</b> 18:00</li>
+        <li><b>Мекен-жайы:</b> Тараз қаласы, Гранд Рояль мейрамханасы, Төле би көшесі 82</li>
+      </ul>
+      <div class="map-link">
+        <a href="https://2gis.kz/taraz/search/Гранд%20Рояль%20Толе%20би%2082" target="_blank">Картадан қарау</a>
+      </div>
+    </section>
+    <!-- Новый красивый блок с таймером и цветами -->
+    <section class="countdown-floral-block">
+      <img class="countdown-flower-top" src="https://static.tildacdn.pro/tild6566-6164-4132-b238-656232363936/_1.png" alt="Цветы сверху" />
+      <div class="countdown-floral-inner">
+        <div class="countdown-title">Тойдың басталуына қалды:</div>
+        <div class="countdown-timer-floral">
+          <div class="countdown-number"><span id="days">00</span><div class="countdown-label">күн</div></div>
+          <div class="countdown-number"><span id="hours">00</span><div class="countdown-label">сағат</div></div>
+          <div class="countdown-number"><span id="minutes">00</span><div class="countdown-label">минут</div></div>
+          <div class="countdown-number"><span id="seconds">00</span><div class="countdown-label">секунд</div></div>
+        </div>
+      </div>
+      <img class="countdown-flower-bottom" src="https://static.tildacdn.pro/tild6531-3633-4431-a438-326434313132/_3.png" alt="Цветы снизу" />
+    </section>
+    <!-- Календарь вместо music-section -->
+    <section class="calendar-section">
+      <div class="calendar-frame">
+        <div class="calendar-border-bg"></div>
+        <div class="calendar-content">
+          <svg class="calendar-title-svg" viewBox="0 0 398 60">
+            <defs>
+              <path id="arc" d="M70,130 A120,100 0 0,1 330,175" fill="none"/>
+            </defs>
+
+            <g class="rotating-text">
+              <text>
+                <textPath href="#arc" startOffset="10%" class="arc-text">Ұмытылмас күн</textPath>
+              </text>
+            </g>
+          </svg>
+
+          <!-- Твой календарь -->
+          <table class="calendar-table">
+            <thead>
+            <tr>
+              <th>дс</th><th>сей</th><th>сәр</th><th>бс</th><th>жм</th><th>сб</th><th>жс</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+            <tr><td><span class="calendar-day-highlight">6</span></td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+            <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+            <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+            <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="rsvp-section">
+      <h2>Қатысуыңызды растаңыз</h2>
+      <form class="rsvp-form" autocomplete="off" action="https://docs.google.com/forms/d/e/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/formResponse" method="POST" target="hidden-iframe">
+        <label for="name">Аты-жөніңіз:</label>
+        <input type="text" id="name" name="entry.2005620554" placeholder="Аты-жөніңізді жазыңыз" required>
+        
+        <label>Қатысуыңыз:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="entry.1045781291" value="Ия озым барамын" required> Иә, барамын</label>
+          <label><input type="radio" name="entry.1045781291" value="Жұбайыммен бірге барамын"> Жұбайыммен бірге барамын</label>
+          <label><input type="radio" name="entry.1045781291" value="Өкінішке орай бара алмайм"> Өкінішке орай, бара алмаймын</label>
+        </div>
+        
+        <button type="submit">Жіберу</button>
+      </form>
+      
+      <!-- Скрытый iframe для отправки формы -->
+      <iframe name="hidden-iframe" style="display:none;"></iframe>
+      
+      <div class="form-success" style="display:none;">Рақмет! Жауабыңыз қабылданды.</div>
+      <div class="form-error" style="display:none;">Қате орын алды. Қайталап көріңіз.</div>
+      
+      <!-- Инструкция для вас -->
+      <div class="admin-info" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 0.9rem; color: #6c757d;">
+        <strong>📊 Админ-панель:</strong> 
+        <a href="https://docs.google.com/spreadsheets/d/1FAIpQLSdQd3YH7YiSoW27b1rWXWXrw_bOSqUIrYG61k7W0s-bIEsr1Q/edit#gid=0" target="_blank" style="color: #007bff;">Google Sheets-те жауаптарды көріңіз</a>
+      </div>
+    </section>
+    <footer>
+      <p>Құрметпен, Гани & Роза Садвакасовтар</p>
+    </footer>
+  </div>
+  <div id="desktop-block" style="display:none;">
+    <div style="text-align:center;padding:40px 10px;font-size:1.2rem;color:#a67c52;">
+      Бұл сайт тек мобильді құрылғыларда көрсетіледі.<br>Сілтемені телефоннан ашыңыз.
+    </div>
+  </div>
+  <div class="foot-flowers scroll-animate">
+    <img src="https://optim.tildacdn.pro/tild3231-3464-4634-a262-386630366135/-/cover/564x352/center/center/-/format/webp/_2_1.png.webp" alt="Декор" />
+  </div>
+  <script>
+    // Google Forms обработчик
+    document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const name = formData.get('entry.2005620554');
+      const attendance = formData.get('entry.1045781291');
+      
+      if (!name || !attendance) {
+        document.querySelector('.form-error').style.display = 'block';
+        document.querySelector('.form-success').style.display = 'none';
+        return;
+      }
+
+      // Показываем загрузку
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.textContent = 'Жіберілуде...';
+      submitButton.disabled = true;
+
+      // Отправляем форму в Google Forms
+      this.submit();
+      
+      // Показываем успех через небольшую задержку
+      setTimeout(() => {
+        document.querySelector('.rsvp-form').style.display = 'none';
+        document.querySelector('.form-success').style.display = 'block';
+        document.querySelector('.form-error').style.display = 'none';
+        
+        // Сбрасываем форму
+        this.reset();
+        
+        // Восстанавливаем кнопку
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      }, 1000);
+    });
+
+    // Автовоспроизведение музыки (размьютить при взаимодействии)
+    const audio = document.getElementById('main-audio');
+    function tryPlay() {
+      audio.muted = false;
+      audio.play();
+      window.removeEventListener('touchstart', tryPlay);
+      window.removeEventListener('click', tryPlay);
+    }
+    window.addEventListener('touchstart', tryPlay);
+    window.addEventListener('click', tryPlay);
+
+    // Музыкальная кнопка play/pause с SVG
+    const musicToggle = document.getElementById('music-toggle');
+    const musicIconSvg = document.getElementById('music-icon-svg');
+    
+    function setPlayIcon() {
+      musicIconSvg.innerHTML = `
+        <svg id="icon-play" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="url(#gold-gradient)"/>
+          <defs>
+            <linearGradient id="gold-gradient" x1="0" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#e0b973"/>
+              <stop offset="1" stop-color="#a67c52"/>
+            </linearGradient>
+          </defs>
+          <polygon points="22,16 22,40 40,28" fill="white"/>
+        </svg>
+      `;
+    }
+    
+    function setPauseIcon() {
+      musicIconSvg.innerHTML = `
+        <svg id="icon-pause" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="28" cy="28" r="28" fill="url(#gold-gradient)"/>
+          <defs>
+            <linearGradient id="gold-gradient" x1="0" y1="0" x2="0" y2="56" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#e0b973"/>
+              <stop offset="1" stop-color="#a67c52"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="18" width="6" height="20" rx="2" fill="white"/>
+          <rect x="30" y="18" width="6" height="20" rx="2" fill="white"/>
+        </svg>
+      `;
+    }
+
+    // Начальное состояние — пауза (музыка играет)
+    setPauseIcon();
+    musicToggle.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        setPauseIcon();
+      } else {
+        audio.pause();
+        setPlayIcon();
+      }
+    });
+    
+    audio.addEventListener('play', setPauseIcon);
+    audio.addEventListener('pause', setPlayIcon);
+
+    // Плавное появление текста по дуге (calendar-title-svg) при прокрутке
+    document.addEventListener("DOMContentLoaded", function () {
+      const arcSvg = document.querySelector(".calendar-title-svg");
+      if (arcSvg) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              arcSvg.classList.add("visible");
+            }
+          });
+        }, {
+          threshold: 0.3
+        });
+        observer.observe(arcSvg);
+      }
+    });
+
+    // Таймер обратного отсчета
+    function updateCountdown() {
+      const eventDate = new Date('2025-10-06T18:00:00+06:00');
+      const now = new Date();
+      let diff = eventDate - now;
+      if (diff < 0) diff = 0;
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Только для мобильных устройств
+    function checkMobile() {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      document.querySelector('.container').style.display = isMobile ? '' : 'none';
+      document.getElementById('desktop-block').style.display = isMobile ? 'none' : '';
+    }
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    // Scroll-animate для цветов
+    function handleScrollAnimate() {
+      document.querySelectorAll('.scroll-animate').forEach(function(el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('zoom-in');
+        } else {
+          el.classList.remove('zoom-in');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', handleScrollAnimate);
+    window.addEventListener('resize', handleScrollAnimate);
+    window.addEventListener('DOMContentLoaded', handleScrollAnimate);
+  </script>
+</body>
+</html>
